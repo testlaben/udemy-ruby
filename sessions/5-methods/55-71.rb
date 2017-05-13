@@ -91,7 +91,7 @@ end
 # p nothing # will literally return nothing (aka nil)
 
 def return_guess
-  puts "What will be the return value here?"
+#  puts "What will be the return value here?"
 
 end
 
@@ -122,11 +122,11 @@ end
 #############
 
 if 5 < 8
-  puts "that is true!"
+  # puts "that is true!"
 end
 
 if 5 > 8
-  puts "wrong!"
+  # puts "wrong!"
 end
 
 #############
@@ -135,13 +135,78 @@ end
 
 color = "Yellow"
 if color == "Red"
-  puts "red is rad!"
+#  puts "red is rad!"
 elsif color == "Green"
-  puts "green is great!"
+#  puts "green is great!"
 elsif color == "Yellow"
-  puts "yay for yellow!"
+#  puts "yay for yellow!"
 end
 
 #############
 # 63 - the else keyword
+#############
+# Same as above, it's part of the if statements.
+# but it's a catch-all if none of the if / elsif
+# statements are != true.
+
+#############
+# 64 - Multiple conditions with &&
+#############
+# used for comparisons, like
+age = 18
+legal_age = 18
+if age > 18 && legal_age == 18
+#  puts "Congratulations, you can buy beer!"
+end
+
+#############
+# 65 - Multiple conditions with ||
+#############
+# Same as above, only it's "or" instead of "and"
+
+
+#############
+# 66 - parentheses & precedence
+#############
+def authenticate(rank, name, credentials)
+  if (rank == "007" && name == "James Bond") || credentials == "Secret Agent"
+#    puts "Access granted."
+  else
+#    puts "Access denied, #{name}"
+  end
+end
+
+authenticate("007", "James Bond", "spy")
+authenticate("007", "Alec Trevelyan", "spy")
+authenticate("006", "Alec Trevelyan", "Secret Agent")
+
+#############
+# 67 - nested if statements.
+#############
+
+def meal_plan(time_of_week, time_of_day)
+  if time_of_week == "weekday"
+    if time_of_day == "breakfast"
+      "Cereal"
+    elsif time_of_day == "lunch"
+      "Sandwitch"
+    elsif time_of_day == "dinner"
+      "Lasagna"
+    end
+  elsif time_of_week == "weekend"
+    if time_of_day == "breakfast"
+      "Toast"
+    elsif time_of_day == "lunch"
+      "Salad"
+    elsif time_of_day == "dinner"
+      "Steak"
+    end
+  end
+end
+
+# p meal_plan("weekday", "lunch")
+# p meal_plan("weekend", "breakfast")
+
+#############
+# 68 - .respond_to? Method
 #############
